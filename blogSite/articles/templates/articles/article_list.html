@@ -2,14 +2,48 @@
 
 
 {% block content %}
-    <h1>This page lists articles</h1>
-    <div class="articles">
+
+<br><br>
+    
+    <section class="s-content">
+
+        <div class="row entries-wrap wide">
+            <div class="entries">
+
+
       {% for article in articles %}
-      <div class="article">
-          <h2> <a href="{% url 'articles:detail' slug=article.slug %}">{{article.title}} </a> </h2>
-          <p>{{article.snippet}}</p>
-          <p>{{article.date}}</p>
-      </div>
+
+      <article class="col-block">
+
+                  <div class="item-entry aos-init aos-animate" data-aos="zoom-in">
+                        <div class="item-entry__thumb">
+                            <a href="{% url 'articles:detail' slug=article.slug %}" class="item-entry__thumb-link">
+                                <img src="/media/{{article.thumb}}"
+                                     srcset="/media/{{article.thumb}} 1x, /media/{{article.thumb}} 2x" alt="">
+                            </a>
+                        </div>
+
+                        <div class="item-entry__text">
+                            <div class="item-entry__cat">
+                                <a href="{% url 'articles:detail' slug=article.slug %}">{{article.title}} </a>
+                            </div>
+
+                            <h1 class="item-entry__title"><a href="{% url 'articles:detail' slug=article.slug %}">{{article.snippet}}</a></h1>
+
+                            <div class="item-entry__date">
+                                <a href="{% url 'articles:detail' slug=article.slug %}">{{article.author}}</a>
+                            </div>
+                        </div>
+                      </div>
+
+
+                </article> <!-- end article -->
+
       {% endfor %}
-    </div>
+
+
+      </div>
+
+      </div>
+    </section>
 {% endblock %}

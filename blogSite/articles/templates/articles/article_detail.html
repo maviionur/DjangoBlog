@@ -2,19 +2,48 @@
 
 
 
+
+
+
 {% block content %}
+<br><br><br><br><br>
 
-<div class="article-detail">
-  <div class="article">
-    <img src="{{article.thumb.url}}" >
-    <h2>{{article.title}}</h2>
+<div align='center' style="margin-left:350px; margin-right:350px;line-height:40px;justify-content:center">
 
-    <p>{{article.body}}</p>
-    <p>{{article.date}}</p>
+
+  <div class="article-detail">
+    <div class="article">
+      <div align='center'>
+        <img src="{{article.thumb.url}}" >
+      </div>
+      <div class="col-md-12">
+
+        <div class="col-md-6">
+
+        </div>
+
+
+        <div class="col-md-4" style="text-align:justify">
+
+
+          <h2 align='center'>{{article.title}}</h2>
+
+          <p>{{article.body}}</p>
+          <p align='center'>{{article.author}}</p>
+          <p align='center'>{{article.date}}</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
 
   </div>
 
+
 </div>
+
 
 
 {% endblock %}

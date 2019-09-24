@@ -3,47 +3,123 @@
 
 {% block content %}
 
-<br><br>
-    
-    <section class="s-content">
-
-        <div class="row entries-wrap wide">
-            <div class="entries">
+<br><br><br><br><br>
 
 
-      {% for article in articles %}
+<div style="align:center">
+<section class="s-content">
 
-      <article class="col-block">
 
-                  <div class="item-entry aos-init aos-animate" data-aos="zoom-in">
-                        <div class="item-entry__thumb">
-                            <a href="{% url 'articles:detail' slug=article.slug %}" class="item-entry__thumb-link">
-                                <img src="/media/{{article.thumb}}"
-                                     srcset="/media/{{article.thumb}} 1x, /media/{{article.thumb}} 2x" alt="">
-                            </a>
-                        </div>
 
-                        <div class="item-entry__text">
-                            <div class="item-entry__cat">
-                                <a href="{% url 'articles:detail' slug=article.slug %}">{{article.title}} </a>
-                            </div>
 
-                            <h1 class="item-entry__title"><a href="{% url 'articles:detail' slug=article.slug %}">{{article.snippet}}</a></h1>
 
-                            <div class="item-entry__date">
-                                <a href="{% url 'articles:detail' slug=article.slug %}">{{article.author}}</a>
-                            </div>
-                        </div>
+  <div id="demo" class="carousel slide" data-ride="carousel" align='center'>
+    <ul class="carousel-indicators">
+      <li data-target="#demo" data-slide-to="0" class="active"></li>
+      <li data-target="#demo" data-slide-to="1"></li>
+      <li data-target="#demo" data-slide-to="2"></li>
+    </ul>
+    <div class="carousel-inner">
+
+
+
+      <div class="carousel-item active">
+        <img src="/media/{{arts.0.thumb}}" alt="Los Angeles" align='center'>
+        <div class="carousel-caption" >
+          <h3 style="color:red">{{arts.0.title}}</h3>
+          <p style="color:red">{{arts.0.snippet}}</p>
+        </div>
+      </div>
+
+
+      <div class="carousel-item">
+        <img src="/media/{{arts.1.thumb}}" alt="Chicago">
+        <div class="carousel-caption">
+          <h3 style="color:red">{{arts.1.title}}</h3>
+          <p style="color:red">{{arts.1.snippet}}</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="/media/besiktas.jpg" alt="New York">
+        <div class="carousel-caption">
+          <h3 style="color:grey">{{arts.2.title}}</h3>
+          <p style="color:grey">{{arts.2.snippet}}</p>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+  </div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+<div align='center'>
+
+
+  <section class="s-content" >
+
+      <div class="row entries-wrap wide" >
+          <div class="entries" '>
+
+
+    {% for article in articles %}
+
+    <article class="col-block" >
+
+                <div class="item-entry aos-init aos-animate" data-aos="zoom-in">
+                      <div class="item-entry__thumb">
+                          <a href="{% url 'articles:detail' slug=article.slug %}" class="item-entry__thumb-link">
+                              <img src="/media/{{article.thumb}}"
+                                   srcset="/media/{{article.thumb}} 1x, /media/{{article.thumb}} 2x" alt="">
+                          </a>
                       </div>
 
+                      <div class="item-entry__text">
+                          <div class="item-entry__cat">
+                              <a href="{% url 'articles:detail' slug=article.slug %}">{{article.title}} </a>
+                          </div>
 
-                </article> <!-- end article -->
+                          <h1 class="item-entry__title"><a href="{% url 'articles:detail' slug=article.slug %}">{{article.snippet}}</a></h1>
 
-      {% endfor %}
+                          <div class="item-entry__date">
+                              <a href="{% url 'articles:detail' slug=article.slug %}">{{article.author}}</a>
+                          </div>
+                      </div>
+                    </div>
 
 
-      </div>
+              </article> <!-- end article -->
 
-      </div>
-    </section>
+    {% endfor %}
+
+
+    </div>
+
+    </div>
+  </section>
+
+
+
+</div>
+
+
 {% endblock %}

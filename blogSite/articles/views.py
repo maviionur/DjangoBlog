@@ -8,7 +8,9 @@ from . import forms
 
 def article_list(request):
     articles = Article.objects.all().order_by('date')
-    return render(request, 'articles/article_list.html', {'articles':articles})
+    art = Article.objects.all().order_by('date')
+    arts = art[:3]
+    return render(request, 'articles/article_list.html', {'articles':articles, 'arts': arts})
 
 
 def article_detail(request, slug):

@@ -37,6 +37,35 @@
     ================================================== -->
 
 
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+    width: 57%;
+    height: 600px;
+        position: relative;
+        margin: 0 auto;
+        overflow: hidden;
+        box-shadow: 0px 1px 1px rgba(0,0,0,0.2), 0px -2px 1px #fff;
+        -webkit-transition: background-position 1.4s ease-in-out 0.3s;
+        -moz-transition: background-position 1.4s ease-in-out 0.3s;
+        -o-transition: background-position 1.4s ease-in-out 0.3s;
+        -ms-transition: background-position 1.4s ease-in-out 0.3s;
+        transition: background-position 1.4s ease-in-out 0.3s;
+
+  }
+
+  .carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+  </style>
+
+
+
 </head>
   <body id="top">
 
@@ -51,8 +80,8 @@
   <header class="s-header header">
 
       <div class="header__logo">
-          <a class="higlight" href="{% url 'home' %}" style="color:blue">
-              Outsmart OOH
+          <a class="higlight" href="{% url 'home' %}" >
+              <h1 style="color:blue">Outsmart OOH</h1>
           </a>
       </div> <!-- end header__logo -->
 
